@@ -38,5 +38,11 @@ type BinSimParams struct {
 
 // BinomialPrice prices option using a Binomial tree.
 func BinomialPrice(inst Instrument, params BinSimParams) float64 {
+	a := make([]float64, params.N)
+	for i, _ := range a {
+		t := N - i
+		h := i
+		a[i] = math.Pow(params.U, h) * math.pow(params.D, t)
+	}
 	return math.Pow(equityPrice, 2)
 }
