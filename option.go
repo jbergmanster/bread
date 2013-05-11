@@ -36,7 +36,7 @@ type BinSimParams struct {
 	N int     // number of time steps
 }
 
-// BinomialPrice prices option using a Binomial tree.
+// Price prices option using a Binomial tree.
 func (params *BinSimParams) Price(inst Instrument) float64 {
 	a := make([]float64, params.N)
 	for i, _ := range a {
